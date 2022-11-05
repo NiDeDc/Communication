@@ -1,6 +1,4 @@
 import zmq
-import struct
-import numpy as np
 import threading
 
 
@@ -17,7 +15,7 @@ class MessageSubscriber:
         self.subscriber.connect(self.address)
         self.subscriber.setsockopt(zmq.SUBSCRIBE, theme)
         self.dataReceive = None
-        self.sub_id = 0
+        self.sub_id = sub_id
         t = threading.Thread(target=self.ReceiveThread, args=(), daemon=True)
         t.start()
 

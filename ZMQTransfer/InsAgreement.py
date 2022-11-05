@@ -17,7 +17,7 @@ class PacketModel:
         self.headFormat1 = '2s'
         self.headFormat2 = 'Q4H'
         self.packetHeadLen = struct.calcsize(self.headFormat1) + struct.calcsize(self.headFormat2)
-        print(self.packetHeadLen)
+        # print(self.packetHeadLen)
         self.q = Queue(maxsize=1000)
 
     def UnpackData(self, data: bytes):
